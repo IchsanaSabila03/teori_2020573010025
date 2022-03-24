@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/web', function (){
+Route::get('/', function (){
         $books = [[
             'id' => 2,
             'title' => 'Post Pertama',
