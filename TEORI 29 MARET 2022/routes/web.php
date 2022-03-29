@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MahasiswaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,27 +12,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //1. Route bawaan laravel
-// Route::get('/', function () {
-//     return view('welcome');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/mahasiswa', [MahasiswaController::class,'index']);
+    
+
+// Route::get('mahasiswa', function (){
+// $arrMahasiswa = ["Ichsana Sabila","Jokowi","Vladimir Putin",
+// "Lisa Permata"];
+// return view('mahasiswa')-> with ('mahasiswa',$arrMahasiswa);
+// });
+// Route::get('dosen', function (){
+// $arrDosen = ["Ichsana Sabila S.Tr.kom","Prof.Silvia Nst, M.farm",
+// "Dr. Umar Agustinus","Dr.Syahrial M.kom"];
+// return view('dosen')->with('dosen',$arrDosen);
+// });
+// Route::get('gallery', function (){
+// return view('gallery');
 // });
 
-Route::get('mahasiswa', function (){
-$arrMahasiswa = ["Ichsana Sabila","Jokowi","Vladimir Putin",
-"Lisa Permata"];
-return view('mahasiswa')-> with ('mahasiswa',$arrMahasiswa);
-});
-Route::get('dosen', function (){
-$arrDosen = ["Ichsana Sabila S.Tr.kom","Prof.Silvia Nst, M.farm",
-"Dr. Umar Agustinus","Dr.Syahrial M.kom"];
-return view('dosen')->with('dosen',$arrDosen);
-});
-Route::get('gallery', function (){
-return view('gallery');
-});
-
-Route::get('admin', function () {
-    return view('admin');
-});
+// Route::get('admin', function () {
+//     return view('admin');
+// });
 
 // Route::get('/web', function (){
 //         $books = [[
