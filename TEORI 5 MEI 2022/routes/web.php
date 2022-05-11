@@ -1,9 +1,5 @@
 <?php
-
-use App\Http\Controllers\Admin\PageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DosenController;
-use App\Http\Controllers\MahasiswaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,44 +15,29 @@ use App\Http\Controllers\MahasiswaController;
 //     return view('welcome');
 // });
 
-// controller manual
-Route::get('/', [PageController::class, 'index']);
-Route::get('/mahasiswa', [PageController::class, 'tampil']);
+Route::get('home', function (){
+$arrMahasiswa = ["Ichsana Sabila","Jokowi","Vladimir Putin",
+"Lisa Permata"];
+return view('home')-> with ('mahasiswa',$arrMahasiswa);
+});
 
-//Route Facades
-Route::get('/facades', [PageController::class, 'cobaFacades']);
+Route::get('Profile', function (){
+$arrDosen = ["Ichsana Sabila S.Tr.kom","Prof.Silvia Nst, M.farm",
+"Dr. Umar Agustinus","Dr.Syahrial M.kom"];
+return view('profile')->with('dosen',$arrDosen);
+});
 
-// external class
-Route::get('coba-class', [PageController::class, 'cobaClass']);
+Route::get('product', function (){
+    return view('product');
+    });
 
-// route Tugas
-Route::get('data-mahasiswa', [MahasiswaController::class, 'mahasiswa']);
-Route::get('data-dosen', [MahasiswaController::class, 'dosen']);
-Route::get('data-gallery', [MahasiswaController::class, 'gallery']);
+Route::get('contact', function (){
+return view('contact');
+});
 
-Route::get('informasi/{jurusan}/{prodi}', [MahasiswaController::class, 'info']);
-
-// Route::get('/mahasiswa', [MahasiswaController::class,'index']);
-// Route::resource('/dosen', DosenController::class);
-    
-
-// Route::get('mahasiswa', function (){
-// $arrMahasiswa = ["Ichsana Sabila","Jokowi","Vladimir Putin",
-// "Lisa Permata"];
-// return view('mahasiswa')-> with ('mahasiswa',$arrMahasiswa);
-// });
-// Route::get('dosen', function (){
-// $arrDosen = ["Ichsana Sabila S.Tr.kom","Prof.Silvia Nst, M.farm",
-// "Dr. Umar Agustinus","Dr.Syahrial M.kom"];
-// return view('dosen')->with('dosen',$arrDosen);
-// });
-// Route::get('gallery', function (){
-// return view('gallery');
-// });
-
-// Route::get('admin', function () {
-//     return view('admin');
-// });
+Route::get('admin', function () {
+    return view('admin');
+});
 
 // Route::get('/web', function (){
 //         $books = [[

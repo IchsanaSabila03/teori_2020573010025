@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $title }}</title>
 </head>
 <body>
     <ul>
@@ -15,10 +14,13 @@
             <a href="/profile">Profile</a>
         </li>
         <li>
-            <a href="/about">About</a>
+            <a href="/about">Product</a>
+        </li>
+        <li>
+            <a href="/about">Contact</a>
         </li>
     </ul>
-    <h1>PROFILE</h1>
-    <p>Ini Adalah Halaman Profile</p>
+    <h1>PRODUCT</h1>
+    <p>Ini Adalah Halaman Product</p>
 </body>
 </html>
